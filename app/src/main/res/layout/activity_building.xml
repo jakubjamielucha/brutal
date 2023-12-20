@@ -11,7 +11,7 @@
         android:id="@+id/textBrutal6"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/box"
         android:fontFamily="@font/playfair_display"
         android:gravity="center"
@@ -22,5 +22,129 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageBuilding"
+        android:layout_width="1500dp"
+        android:layout_height="420dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBrutal6"
+        tools:srcCompat="@drawable/barbican" />
+
+    <TextView
+        android:id="@+id/buildingName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/playfair_display"
+        android:text="Building Name"
+        android:textColor="@color/darkGray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageBuilding" />
+
+    <TextView
+        android:id="@+id/buildingMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/playfair_display"
+        android:text="Map."
+        android:textColor="@color/darkGray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buildingLinks" />
+
+    <TextView
+        android:id="@+id/buildingArchitect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/serifpro"
+        android:text="Architect Architect"
+        android:textColor="@color/darkGray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buildingName" />
+
+    <TextView
+        android:id="@+id/buildingLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/serifpro"
+        android:text="City, Country"
+        android:textColor="@color/darkGray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buildingArchitect" />
+
+    <TextView
+        android:id="@+id/buildingYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/serifpro"
+        android:text="1991"
+        android:textColor="@color/darkGray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buildingLocation" />
+
+    <TextView
+        android:id="@+id/buildingStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/serifpro"
+        android:text="Existing"
+        android:textColor="@color/darkGray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buildingYear" />
+
+    <TextView
+        android:id="@+id/buildingDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/serifpro"
+        android:text="The form of the building consists of several cuboids. It is characterized by expressive overhangs. Large glass surfaces are covered by sun-breakers. The lower parts of the walls are inclined. The culmination of the composition is slender service tower. The facades are finished with stone cladding."
+        android:textAlignment="center"
+        android:textColor="@color/darkGray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buildingStatus" />
+
+    <TextView
+        android:id="@+id/buildingLinks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/serifpro"
+        android:text="https://www.archdaily.com.br/br/626874/classicos-da-arquitetura-anhembi-tenis-clube-joao-batista-vilanova-artigas-e-carlos-cascaldi https://brazilianconcrete.wordpress.com/2016/10/25/visit-anhembi-tenis-clube/ http://www.arquiteturabrutalista.com.br/fichas-tecnicas/DW%201961-54/1961-54-fichatecnica.htmhttps://www.youtube.com/watch?v=LLBLs9EMELM"
+        android:textAlignment="center"
+        android:textColor="@color/darkGray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buildingDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
