@@ -21,7 +21,7 @@ public class AllActivity extends AppCompatActivity {
     textBrutal1.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(AllActivity.this, MenuActivity.class);
+            Intent intent = new Intent(AllActivity.this, BuildingActivity.class);
             startActivity(intent);
         }
     });
