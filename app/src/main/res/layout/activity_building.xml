@@ -144,7 +144,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:fontFamily="@font/serifpro"
-            android:text="https://www.archdaily.com.br/br/626874/classicos-da-arquitetura-anhembi-tenis-clube-joao-batista-vilanova-artigas-e-carlos-cascaldi https://brazilianconcrete.wordpress.com/2016/10/25/visit-anhembi-tenis-clube/ http://www.arquiteturabrutalista.com.br/fichas-tecnicas/DW%201961-54/1961-54-fichatecnica.htmhttps://www.youtube.com/watch?v=LLBLs9EMELM"
+            android:text="https://www.archdaily.com.br/br/626874/classicos-da-arquitetura-anhembi-tenis-clube-joao-batista-vilanova-artigas-e-carlos-cascaldi https://brazilianconcrete.wordpress.com/2016/10/25/visit-anhembi-tenis-clube/ http://www.arquiteturabrutalista.com.br/fichas-tecnicas/DW%201961-54/1961-54-fichatecnica.htm https://www.youtube.com/watch?v=LLBLs9EMELM"
             android:textAlignment="center"
             android:textColor="@color/darkGray"
             android:textSize="12sp"

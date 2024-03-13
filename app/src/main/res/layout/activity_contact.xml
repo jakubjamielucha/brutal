@@ -23,4 +23,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textContactInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
+        android:text="If you find any of the buildings missing, please don't hesitate to contact me! If you could send the information in the following format, it would be helpful to all of us to add the building to the database:\n\nName:\nArchitect:\nConstruction Years:\nCurrent status:\nDescription:\nMap location:\nLinks:\nDescription Source:\nPhoto Source:\n\nThis info to be sent to: \njakubjamielucha@gmail.com\n\nThank you very much!\n\nPlease remember that I earn absolutely nothing out of it and I decided to do it for the community out of passion for the brutalist architecture and I'm also fully aware that the list might not be complete."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBrutal5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

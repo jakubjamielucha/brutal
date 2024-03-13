@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 public class BuildingActivity extends AppCompatActivity {
 
-    TextView textBrutal6, buildingName, buildingArchitect, buildingLocation, buildingYear, buildingStatus, buildingDescription, buildingLinks, buildingMap;
+    TextView textBrutal6, buildingName, buildingArchitect, buildingLocation, buildingYear, buildingStatus,
+            buildingDescription, buildingLinks, buildingMap, buildingPhotoSource, buildingDescriptionSource;
     ImageView imageBuilding;
     ImageButton starButton;
 
@@ -30,6 +31,8 @@ public class BuildingActivity extends AppCompatActivity {
         buildingDescription = findViewById(R.id.buildingDescription);
         buildingLinks = findViewById(R.id.buildingLinks);
         buildingMap = findViewById(R.id.buildingMap);
+        buildingPhotoSource = findViewById(R.id.buildingPhotoSource);
+        buildingDescriptionSource = findViewById(R.id.buildingDescriptionSource);
 
         imageBuilding = findViewById(R.id.imageBuilding);
 
