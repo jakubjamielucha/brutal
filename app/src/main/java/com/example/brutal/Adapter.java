@@ -15,16 +15,14 @@ import java.util.ArrayList;
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private Context context;
-    private ArrayList id, name, architect, city, country, photo_link;
+    private ArrayList name, architect, city, country;
 
-    public Adapter(Context context, ArrayList id, ArrayList name, ArrayList architect, ArrayList city, ArrayList country, ArrayList photo_link) {
+    public Adapter(Context context, ArrayList name, ArrayList architect, ArrayList city, ArrayList country) {
         this.context = context;
-        this.id = id;
         this.name = name;
         this.architect = architect;
         this.city = city;
         this.country = country;
-        this.photo_link = photo_link;
     }
 
     @NonNull
@@ -36,19 +34,26 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.name.setText(String.valueOf(name.get(position)));
+        holder.architect.setText(String.valueOf(architect.get(position)));
+        holder.city.setText(String.valueOf(city.get(position)));
+        holder.country.setText(String.valueOf(country.get(position)));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return name.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView name, architect, city, country;
-        ImageView photo_link;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            name = itemView.findViewById(R.id.textNameLayout);
+            architect = itemView.findViewById(R.id.textArchitectLayout);
+            city = itemView.findViewById(R.id.textCityLayout);
+            country = itemView.findViewById(R.id.textCountryLayout);
         }
     }
 }
