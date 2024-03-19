@@ -4,25 +4,19 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private Context context;
-    private ArrayList name, architect, city, country;
+    private ArrayList<BuildingModel> buildings;
 
-    public Adapter(Context context, ArrayList name, ArrayList architect, ArrayList city, ArrayList country) {
+    public Adapter(Context context, ArrayList<BuildingModel> buildings) {
         this.context = context;
-        this.name = name;
-        this.architect = architect;
-        this.city = city;
-        this.country = country;
+        this.buildings = buildings;
     }
 
     @NonNull
@@ -34,15 +28,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.name.setText(String.valueOf(name.get(position)));
-        holder.architect.setText(String.valueOf(architect.get(position)));
-        holder.city.setText(String.valueOf(city.get(position)));
-        holder.country.setText(String.valueOf(country.get(position)));
+        BuildingModel building = buildings.get(position);
+        holder.name.setText(building.getName());
+        holder.architect.setText(building.getArchitect());
+        holder.city.setText(building.getCity());
+        holder.country.setText(building.getCountry());
+        // Similarly set other fields here
     }
 
     @Override
     public int getItemCount() {
-        return name.size();
+        return buildings.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -54,6 +50,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             architect = itemView.findViewById(R.id.textArchitectLayout);
             city = itemView.findViewById(R.id.textCityLayout);
             country = itemView.findViewById(R.id.textCountryLayout);
+            // Similarly initialize other TextViews here
         }
     }
 }

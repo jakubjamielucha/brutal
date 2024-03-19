@@ -5,8 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -15,54 +13,35 @@ import java.util.ArrayList;
 
 public class AllActivity extends AppCompatActivity {
 
-    TextView textBrutal1;
-
-
-    SQLiteDatabase sqLiteDatabase;
     RecyclerView recyclerView;
-    ArrayList<String> name, architect, city, country, photo_link;
-    DatabaseCopyHelper DB;
     Adapter adapter;
+    ArrayList<BuildingModel> buildings;
+    BuildingsDatabase buildingsDatabase;
+    TextView textBrutal1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all);
 
+        recyclerView = findViewById(R.id.listAll);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        buildingsDatabase = new BuildingsDatabase(this);
+        buildings = buildingsDatabase.getAllBuildings();
+
+        adapter = new Adapter(this, buildings);
+        recyclerView.setAdapter(adapter);
+
         textBrutal1 = findViewById(R.id.textBrutal1);
 
-        DB = new DatabaseCopyHelper(this);
-        name = new ArrayList<>();
-        architect = new ArrayList<>();
-        city = new ArrayList<>();
-        country = new ArrayList<>();
-        photo_link = new ArrayList<>();
-        recyclerView = findViewById(R.id.listAll);
-        adapter = new Adapter(this, name, architect, city, country);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        displayData();
-
-    textBrutal1.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent(AllActivity.this, BuildingActivity.class);
-            startActivity(intent);
-        }
-    });
-    }
-
-    private void displayData() {
-        Cursor cursor = DB.getData();
-
-            while(cursor.moveToNext()){
-                name.add(cursor.getString(1));
-                architect.add(cursor.getString(2));
-                city.add(cursor.getString(4));
-                country.add(cursor.getString(5));
-                photo_link.add(cursor.getString(6));
+        textBrutal1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AllActivity.this, MenuActivity.class);
+                startActivity(intent);
             }
-        adapter.notifyDataSetChanged();
+        });
 
     }
 }
