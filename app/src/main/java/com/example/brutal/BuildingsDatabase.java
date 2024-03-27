@@ -9,10 +9,9 @@ import java.util.ArrayList;
 public class BuildingsDatabase extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "brutal.db";
-    private static final int DATABASE_VERSION = 1;
 
     public BuildingsDatabase(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, 1);
     }
 
     @Override

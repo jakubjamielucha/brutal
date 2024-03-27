@@ -13,23 +13,24 @@ import java.io.OutputStream;
 public class DatabaseCopyHelper extends SQLiteOpenHelper {
 
 	private static final String DB_NAME = "brutal.db";
-	private static final int DB_VERSION = 1;
-	private static String DB_PATH = "/data/data/%s/databases/";
+	private SQLiteDatabase myDataBase;
+	String DB_PATH = null;
 
-	private final Context mContext;
+	private final Context myContext;
 
 	public DatabaseCopyHelper(Context context) {
-		super(context, DB_NAME, null, DB_VERSION);
-		this.mContext = context;
-		DB_PATH = String.format(DB_PATH, context.getPackageName());
+		super(context, DB_NAME, null, 1);
+		this.myContext = context;
+		DB_PATH="/data/data/"+context.getPackageName()+"/"+"databases/";
 	}
 
 	public void createDataBase() throws IOException {
 		boolean dbExist = checkDataBase();
 
-		if (!dbExist) {
+		if (dbExist) {
 			this.getReadableDatabase();
 			this.close();
+		} else {
 			try {
 				copyDataBase();
 			} catch (IOException e) {
@@ -53,7 +54,7 @@ public class DatabaseCopyHelper extends SQLiteOpenHelper {
 	}
 
 	private void copyDataBase() throws IOException {
-		InputStream myInput = mContext.getAssets().open(DB_NAME);
+		InputStream myInput = myContext.getAssets().open(DB_NAME);
 		String outFileName = DB_PATH + DB_NAME;
 		OutputStream myOutput = new FileOutputStream(outFileName);
 
@@ -68,14 +69,16 @@ public class DatabaseCopyHelper extends SQLiteOpenHelper {
 		myInput.close();
 	}
 
-	public SQLiteDatabase openDataBase() throws SQLException {
+	public void openDataBase() throws SQLException {
 		String myPath = DB_PATH + DB_NAME;
-		return SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+		myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 	}
 
 	@Override
 	public synchronized void close() {
-		// Close the database if it was opened
+		if(myDataBase != null)
+			myDataBase.close();
+
 		super.close();
 	}
 

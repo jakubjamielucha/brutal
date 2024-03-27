@@ -23,6 +23,8 @@ public class MenuActivity extends AppCompatActivity {
         textShop = findViewById(R.id.textShop);
         textContact = findViewById(R.id.textContact);
 
+        copyDatabase();
+
         textHeadMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,5 +74,19 @@ public class MenuActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void copyDatabase()
+    {
+        try {
+
+            DatabaseCopyHelper helper = new DatabaseCopyHelper(MenuActivity.this);
+            helper.createDataBase();
+            helper.openDataBase();
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }
