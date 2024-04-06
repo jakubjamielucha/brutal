@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import com.example.brutal.MyDatabase;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,6 @@ public class AllActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Adapter adapter;
     ArrayList<BuildingModel> buildings;
-    BuildingsDatabase buildingsDatabase;
     TextView textBrutal1;
 
     @Override
@@ -27,8 +27,10 @@ public class AllActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.listAll);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        buildingsDatabase = new BuildingsDatabase(this);
-        buildings = buildingsDatabase.getAllBuildings();
+        //buildingsDatabase = new BuildingsDatabase(this);
+       // buildings = buildingsDatabase.getAllBuildings();
+        MyDatabase db = new MyDatabase(this);
+        buildings = db.getAllBuildings();
 
         adapter = new Adapter(this, buildings);
         recyclerView.setAdapter(adapter);

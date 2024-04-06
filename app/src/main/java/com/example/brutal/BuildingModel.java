@@ -2,7 +2,7 @@ package com.example.brutal;
 
 public class BuildingModel {
 
-    private int id;
+    private String id;
     private String name;
     private String architect;
     private String construction_date;
@@ -18,11 +18,12 @@ public class BuildingModel {
     private String photo_source;
     private String links;
 
-    public BuildingModel(int id, String name, String architect, String construction_date, String city,
+    public BuildingModel(String id, String name, String architect, String construction_date, String city,
                          String country, String description, String description_source, String maps_coordinates,
                          String maps_link, String tags, String status, String photo_link, String photo_source,
                          String links){
         this.id = id;
+        this.name = name;
         this.architect = architect;
         this.construction_date = construction_date;
         this.city = city;
@@ -38,11 +39,11 @@ public class BuildingModel {
         this.links = links;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

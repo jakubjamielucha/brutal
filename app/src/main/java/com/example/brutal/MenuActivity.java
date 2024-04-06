@@ -23,7 +23,7 @@ public class MenuActivity extends AppCompatActivity {
         textShop = findViewById(R.id.textShop);
         textContact = findViewById(R.id.textContact);
 
-        copyDatabase();
+        //copyDatabase();
 
         textHeadMenu.setOnClickListener(new View.OnClickListener() {
             @Override

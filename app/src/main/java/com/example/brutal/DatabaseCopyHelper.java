@@ -1,6 +1,7 @@
 package com.example.brutal;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -12,7 +13,7 @@ import java.io.OutputStream;
 
 public class DatabaseCopyHelper extends SQLiteOpenHelper {
 
-	private static final String DB_NAME = "brutal.db";
+	private static final String DB_NAME = "databases/brutal.db";
 	private SQLiteDatabase myDataBase;
 	String DB_PATH = null;
 
@@ -21,7 +22,11 @@ public class DatabaseCopyHelper extends SQLiteOpenHelper {
 	public DatabaseCopyHelper(Context context) {
 		super(context, DB_NAME, null, 1);
 		this.myContext = context;
-		DB_PATH="/data/data/"+context.getPackageName()+"/"+"databases/";
+		//ْْْْْْْْْْْْْْDB_PATH="/data/data/"+context.getPackageName()+"/"+"databases/";
+		ContextWrapper cw = new ContextWrapper(context);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+			DB_PATH = cw.getDataDir() + "/databases/";
+		}
 	}
 
 	public void createDataBase() throws IOException {
@@ -34,6 +39,7 @@ public class DatabaseCopyHelper extends SQLiteOpenHelper {
 			try {
 				copyDataBase();
 			} catch (IOException e) {
+				e.printStackTrace();
 				throw new Error("Error copying database");
 			}
 		}
