@@ -27,8 +27,6 @@ public class AllActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.listAll);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //buildingsDatabase = new BuildingsDatabase(this);
-       // buildings = buildingsDatabase.getAllBuildings();
         MyDatabase db = new MyDatabase(this);
         buildings = db.getAllBuildings();
 

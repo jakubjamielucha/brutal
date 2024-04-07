@@ -38,14 +38,17 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textBrutal6"
-            tools:srcCompat="@drawable/barbican" />
+            tools:srcCompat="@drawable/barbican"/>
 
         <TextView
             android:id="@+id/buildingName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:fontFamily="@font/playfair_display"
+            android:gravity="center_horizontal"
             android:text="Building Name"
             android:textColor="@color/darkGray"
             android:textSize="18sp"
@@ -70,10 +73,13 @@
 
         <TextView
             android:id="@+id/buildingArchitect"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="2dp"
+            android:layout_marginEnd="15dp"
             android:fontFamily="@font/serifpro"
+            android:gravity="center_horizontal"
             android:text="Architect Architect"
             android:textColor="@color/darkGray"
             android:textSize="12sp"
@@ -90,6 +96,7 @@
             android:text="City, Country"
             android:textColor="@color/darkGray"
             android:textSize="12sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buildingArchitect" />
@@ -126,12 +133,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
+            android:layout_marginEnd="25dp"
             android:fontFamily="@font/serifpro"
             android:text="The form of the building consists of several cuboids. It is characterized by expressive overhangs. Large glass surfaces are covered by sun-breakers. The lower parts of the walls are inclined. The culmination of the composition is slender service tower. The facades are finished with stone cladding."
             android:textAlignment="center"
             android:textColor="@color/darkGray"
             android:textSize="12sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buildingStatus" />

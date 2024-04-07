@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
 
 public class BuildingActivity extends AppCompatActivity {
 
@@ -37,6 +40,34 @@ public class BuildingActivity extends AppCompatActivity {
         imageBuilding = findViewById(R.id.imageBuilding);
 
         starButton = findViewById(R.id.starButton);
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            String name = intent.getStringExtra("name");
+            String architect = intent.getStringExtra("architect");
+            String city = intent.getStringExtra("city");
+            String country = intent.getStringExtra("country");
+            String photo_link = intent.getStringExtra("photo_link");
+            String construction_date = intent.getStringExtra("construction_date");
+            String description = intent.getStringExtra("description");
+            String description_source = intent.getStringExtra("description_source");
+            String status = intent.getStringExtra("status");
+            String photo_source = intent.getStringExtra("photo_source");
+            String links = intent.getStringExtra("links");
+
+            buildingName.setText(name);
+            buildingArchitect.setText(architect);
+            buildingLocation.setText(city + ", " + country);
+            Picasso.get().load(photo_link).transform(new BlackWhiteTransformation()).into(imageBuilding);
+            buildingYear.setText(construction_date);
+            buildingDescription.setText(description);
+            buildingDescriptionSource.setText("Description source:\n" + description_source);
+            buildingStatus.setText(status);
+            buildingPhotoSource.setText("Photo source:\n" + photo_source);
+            String[] linksArray = links.split(" ");
+            String formattedLinks = TextUtils.join("\n", linksArray);
+            buildingLinks.setText("Links:\n" + formattedLinks);
+        }
 
         textBrutal6.setOnClickListener(new View.OnClickListener() {
             @Override
